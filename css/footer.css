@@ -1,0 +1,30 @@
+/* ==========================================================================
+   SIMPLIFIED ENDING FOOTER (REDUCED PADDING TOPS, JUST 3 LINES)
+   ========================================================================== */
+.simple-ending-footer {
+  position: relative;
+  width: 100vw;
+  background-color: var(--midnight-canvas);
+  border-top: 1px solid rgba(233, 236, 239, 0.08);
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-inner-text {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  line-height: 2;
+  letter-spacing: 0.22em;
+  color: var(--metallic-silver);
+  opacity: 0.5;
+  text-transform: uppercase;
+  transition: opacity 0.5s ease;
+}
+
+.footer-inner-text:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,85 @@
+/* Enhanced Responsive Media Query for Maximum Content Width on Smaller Screens */
+@media screen and (max-width: 992px) {
+  /* Expand section containers to edge-to-edge */
+  .section-container,
+  .hundred-million-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+
+  /* Force main storytelling grid rows into vertical stack with maximum width */
+  .grid-story-row,
+  .grid-story-row.image-right {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Visual and narrative columns take full width */
+  .grid-story-row .visual-col,
+  .grid-story-row .narrative-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Force image-right rows to maintain natural top-to-bottom reading order */
+  .grid-story-row.image-right .visual-col {
+    order: 1 !important;
+  }
+  .grid-story-row.image-right .narrative-col {
+    order: 2 !important;
+  }
+
+  /* Maximize the narrative box width to fill the container */
+  .narrative-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Break spec grids into single-column vertical display */
+  .narrative-specs-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .narrative-specs-grid .spec-cell {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Streamline section padding */
+  .story-section,
+  .hundred-million-section {
+    padding: 2rem 0.25rem !important;
+  }
+}
+
+/* Tighter mobile screens optimization */
+@media screen and (max-width: 576px) {
+  .section-container,
+  .hundred-million-wrapper {
+    padding-left: 0.1rem !important;
+    padding-right: 0.1rem !important;
+  }
+
+  .narrative-box {
+    padding: 1.25rem 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .hundred-million-title {
+    font-size: 1.5rem !important;
+  }
+}

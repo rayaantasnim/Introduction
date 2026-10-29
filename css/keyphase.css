@@ -1,0 +1,34 @@
+/* Multi-Line Neon Underline Animation */
+.keyphrase {
+  /* Disabled inline-block -> Changed to inline for flawless multi-line wrapping */
+  display: inline; 
+  color: var(--crystal-white);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+
+  /* Create the underline using a linear gradient background */
+  background-image: linear-gradient(90deg, var(--electric-cyan), var(--neon-purple));
+  background-repeat: no-repeat;
+  
+  /* Position the underline at the bottom of the text */
+  background-position: 0 100%; 
+  
+  /* Underline height (2px). Adjust the 100% to control vertical spacing */
+  background-size: 0% 2px; 
+  
+  /* Smooth premium easing applied directly to the background-size */
+  transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Clean line-wrapping optimization */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.keyphrase:hover {
+  /* Expands the underline across all wrapped lines instantly */
+  background-size: 100% 2px;
+  
+  /* Multi-line glow workaround using text-shadow */
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6); 
+}

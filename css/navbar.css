@@ -1,0 +1,156 @@
+/* --- Active Navbar Card State --- */
+.nav-card-node.active-card {
+  background: rgba(22, 40, 72, 0.85);
+  border-color: var(--neon-purple);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.6), 
+    0 0 20px var(--purple-glow), 
+    inset 0 0 12px rgba(157, 78, 221, 0.2);
+  transform: translateY(-2px);
+  pointer-events: none; /* Optional: disables hover fighting if it's already active */
+}
+
+/* Sub-element modifications unique to the active card */
+.nav-card-node.active-card .card-num {
+  color: var(--crystal-white);
+  text-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.nav-card-node.active-card .card-arrow {
+  color: var(--electric-cyan);
+  transform: translateX(3px);
+}
+
+
+/* --- Sticky Top Navigation Bar --- */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(65px, 8vh, 85px);
+  padding: 0 clamp(1.2rem, 4vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--midnight-glass);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid rgba(233, 236, 239, 0.08);
+  z-index: 9000;
+  transition: var(--transition-smooth);
+}
+
+.nav-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Right-Hand Navigation Activator Button */
+.nav-right-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-activator-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 9999px;
+  background: rgba(16, 28, 52, 0.8);
+  border: 1px solid rgba(157, 78, 221, 0.4);
+  color: var(--crystal-white);
+  font-family: var(--font-sans);
+  font-size: clamp(0.75rem, 0.85vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(157, 78, 221, 0.15);
+}
+
+.nav-activator-btn:hover {
+  border-color: var(--electric-cyan);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 25px var(--cyan-glow), inset 0 0 15px rgba(0, 245, 212, 0.25);
+  transform: translateY(-2px) scale(1.03);
+  color: var(--electric-cyan);
+}
+
+.nav-activator-btn:hover .hamburger-line {
+  background-color: var(--electric-cyan);
+}
+
+
+
+/* --- Full-Screen 9-Card Navigation Overlay --- */
+#fullscreen-nav-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 19, 43, 0.96);
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+  z-index: 9500;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow-y: auto;
+}
+
+#fullscreen-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(1rem, 1.6vw, 1.6rem);
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nav-card-node {
+  position: relative;
+  background: rgba(16, 28, 52, 0.65);
+  border: 1px solid rgba(233, 236, 239, 0.08);
+  border-radius: 20px;
+  padding: clamp(1.2rem, 1.8vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-card-node:hover {
+  transform: translateY(-6px) scale(1.025);
+  background: rgba(22, 40, 72, 0.92);
+  border-color: var(--electric-cyan);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px var(--cyan-glow), 0 0 45px rgba(157, 78, 221, 0.2);
+}
+
+.nav-card-node:hover .card-arrow {
+  color: var(--electric-cyan);
+  transform: translateX(6px);
+}

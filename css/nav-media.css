@@ -1,0 +1,48 @@
+/* ==========================================================================
+   1. DEFAULT / DESKTOP LAYOUTS (Declared First)
+   ========================================================================== */
+
+/* Main navigation grid framework */
+.nav-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(1rem, 1.6vw, 1.6rem);
+  width: 100%;
+}
+
+/* Base specification list configuration */
+.narrative-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+}
+
+
+/* ==========================================================================
+   2. RESPONSIVE MOBILE OVERRIDES (Declared Last at the bottom)
+   ========================================================================== */
+
+/* Target Tablets & Smaller Screen Matrix (Collapse Navigation Overlay) */
+@media (max-width: 900px) {
+  .nav-grid-matrix {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Target Mobile Viewports (Collapse Content/Spec Grids Vertically) */
+@media (max-width: 768px) {
+  .narrative-specs-grid {
+    grid-template-columns: 1fr !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+  }
+
+  .spec-cell {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
